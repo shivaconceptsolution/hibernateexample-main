@@ -17,9 +17,9 @@ public class OnetoManyExample {
 		Session session = sf.openSession();
 		session.beginTransaction();
 		Dept d = new Dept();
-		d.setDeptid(10);
-		d.setDeptname("IT");
-		Emp em = new Emp();
+		d.setDeptid(20);
+		d.setDeptname("SALES");
+		/*Emp em = new Emp();
 		em.setEmpid(1001);
 		em.setEmpname("XYZ");
 		Emp em1 = new Emp();
@@ -28,7 +28,7 @@ public class OnetoManyExample {
 		Set st = new HashSet<>();
 		st.add(em);
 		st.add(em1);
-		d.setEmpref(st);
+		d.setEmpref(st);*/
 		session.save(d);
 		session.getTransaction().commit();
 		session.close();

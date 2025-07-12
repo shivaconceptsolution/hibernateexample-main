@@ -3,10 +3,22 @@ package com.scs.hibernatepractice;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.NamedNativeQuery;
+import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
 @Entity(name = "Student")
+/*@NamedQuery(
+	    name = "Student.findAllRecord",
+	    query = "FROM Student e"
+	)*/
+@NamedNativeQuery(
+	    name = "Student.findAllRecord",
+	    query = "SELECT * FROM Student",
+	    resultClass = Student.class
+	)
 @Table(name = "STUDENT")
+
 public class Student {
 @Id
 private int rno;

@@ -13,7 +13,8 @@ public class HibernateSelectOperation {
 		Configuration cfg = new Configuration();
 		SessionFactory sf = cfg.configure().buildSessionFactory();
 		Session session = sf.openSession();
-		Query q = session.createQuery("from Student",Student.class);
+		//Query q = session.createQuery("from Student",Student.class);
+		Query q = session.createNamedQuery("Student.findAllRecord",Student.class);
 		List<Student> s = q.getResultList();
 		for(Student obj:s)
 		{
